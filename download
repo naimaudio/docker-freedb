@@ -17,7 +17,7 @@ fi
 file=${url##*/}
 
 # Download latest FreeDB dump.
-axel -a -o /tmp/$file -n 32 $url
+wget $url -O /tmp/$file
 
 # Unpack latest FreeDB records.
 pv /tmp/$file | tar -C $output -xj
